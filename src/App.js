@@ -1,32 +1,30 @@
 import React,{useEffect} from 'react';
-import Cell from './components/Cell';
-import Na from './components/Na';
 import './App.css';
+import CharecterState from './pages/CharecterState'
+import CellPage from './pages/CellPage'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  useEffect(createElement, []);
-  async function createElement(){
-
-  }
   return (
+    <>
     <div className="App">
       <header className="App-header">
-        <div className="body">
-          <div id="canvas">
-            <div id="cell">
-                 <Cell id="topcell" left="45%" top="5%"/>
-                 <Na left="38%" top="7%"/>
-                 <Cell id="rightcell" left="5%" top="45%"/>
-                 <Na left="8%" top="55%"/>
-                 <Cell id="bottomcell" right="45%" bottom="5%"/>
-                 <Na right="55%" bottom="5%"/>
-                 <Cell id="leftcell" right="5%" bottom="50%"/>
-                 <Na right="5%" bottom="40%"/>
+        <div className="container-fluid">
+          <div className="row col-md-12">
+            <div className="col-md-3">
+                <CharecterState />
+            </div>
+            
+            <div className="col-md-9">
+                <CellPage />
             </div>
           </div>
+
         </div>
       </header>
     </div>
+    
+    </>
   );
 }
 

@@ -26,16 +26,18 @@
 #canvas{
   background-color: #282c34;
   position: relative;
-  width: 600px;
-  height: 600px;
-  margin: 3vh auto;
+  width: 660px;
+  height: 660px;
+  margin: 2vh auto;
 }
 #cell{
-  background-color: aqua;
-  width: 600px;
-  height: 600px;
+  background-color: #6bccf6;
+  width: 630px;
+  height: 630px;
   border-radius: 50%;
   position: relative;
+  left: 2.5%;
+  top: 2.5%;
 }
 .cl1{
   background: radial-gradient(white 10%, rgb(77, 139, 77) 80%);;
@@ -48,15 +50,8 @@
   position: absolute;
   font-size: 0.90rem;
   color: #000;
-  cursor: pointer;
+  cursor: move;
   font-weight: bold;
-}
-#topcell{
-  animation: mymove 3s infinite;
-}
-@keyframes mymove {
-  from {top: 4%;}
-  to {top: 5%;}
 }
 
 .na{
@@ -70,6 +65,112 @@
   position: absolute;
   font-size: .50rem;
   color: #000;
-  cursor: pointer;
+  cursor: move;
   font-weight: bold;
+}
+
+#topcell{
+  animation: cellMemMove 3s ease-in infinite;
+}
+@keyframes topMove {
+  0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.3);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-3px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.3);
+		transform: translatey(0px);
+	}
+}
+#bottomcell{
+  animation: bottomMove 3s ease-in infinite;
+}
+@keyframes bottomMove {
+  0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.3);
+		transform: translatey(-3px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(0px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.3);
+		transform: translatey(-3px);
+	}
+}
+#rightcell{
+  animation: rightMove 3s ease-in-out infinite;
+}
+@keyframes rightMove {
+  0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.3);
+		transform: translatex(-3px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatex(0px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.3);
+		transform: translatex(-3px);
+	}
+}
+#leftcell{
+  animation: leftMove 3s ease-in-out infinite;
+}
+@keyframes leftMove {
+  0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.3);
+		transform: translatex(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatex(5px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.3);
+		transform: translatex(0px);
+	}
+}
+.cell-membrain{
+  background-image: url('../src/pages/cell4.png');
+  background-repeat: no-repeat;
+  width: 90%;
+  height: 90%;
+  z-index: 99;
+  position: absolute;
+  top: 23%;
+  left: 15%;;
+  animation: cellMemMove 3s ease-in infinite;
+}
+.inner-membrain{
+  background-image: url('../src/pages/cell5.png');
+  background-repeat: no-repeat;
+  width: 450px;
+  height: 550px;
+  z-index: 999;
+  position: absolute;
+  top: 23%;
+  left: 15%;;
+  animation: cellMemMove 3s ease-in infinite;
+}
+
+@keyframes cellMemMove-N {
+  0% {
+		box-shadow: 0 0px 0px 0px rgba(0,0,0,0.3);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-1px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.3);
+		transform: translatey(0px);
+	}
 }

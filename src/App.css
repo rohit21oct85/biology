@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  position: relative;
 }
 
 .App-logo {
@@ -13,21 +14,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +21,55 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#canvas{
+  background-color: #282c34;
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 3vh auto;
+}
+#cell{
+  background-color: aqua;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  position: relative;
+}
+.cl1{
+  background: radial-gradient(white 10%, rgb(77, 139, 77) 80%);;
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  padding: 5px;
+  position: absolute;
+  font-size: 0.90rem;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+}
+#topcell{
+  animation: mymove 3s infinite;
+}
+@keyframes mymove {
+  from {top: 4%;}
+  to {top: 5%;}
+}
+
+.na{
+  background: radial-gradient(white 5%, rgb(146, 73, 206) 60%);;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  padding: 2.5px;
+  position: absolute;
+  font-size: .50rem;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
 }
